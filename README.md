@@ -1,4 +1,5 @@
 Run:- 
->>> .venv\Scripts\activate
->>> python Main.py
+>> .venv\Scripts\activate
+<br>
+>> python Main.py
 
