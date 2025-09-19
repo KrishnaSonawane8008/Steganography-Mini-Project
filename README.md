@@ -1,6 +1,6 @@
 Run:- 
 <br>
->> .venv\Scripts\activate
+-> .venv\Scripts\activate
 <br>
->> python Main.py
+-> python Main.py
 
