@@ -1,7 +1,5 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-from GUI import ZoomableCanvas as ZC
-from GUI import CollapsiblePane as CPane
 from GUI import GUI_Main
 import Utilities as ut
 
@@ -94,6 +92,8 @@ def LSB_Decryption(image):
             pix3_binary=( ut.int_to_binary(pix3[0]), ut.int_to_binary(pix3[1]), ut.int_to_binary(pix3[2])  )
             char_binary+=pix3_binary[0][-1]+pix3_binary[1][-1]+pix3_binary[2][-1]
 
+        if(len(char_binary[:-1])<8):
+            break
         binary_list.append(char_binary[:-1])
         if(char_binary[-1]=='0'):
             break
@@ -112,7 +112,7 @@ def LSB_Decryption(image):
 bindings={"LSB Encryption":LSB_Encryption, "LSB Decryption":LSB_Decryption}
 
 # Encrypt("hi")
-
-root=ctk.CTk()
-gui=GUI_Main.GUI(root=root, bindings=bindings)
-root.mainloop()
+if __name__ == "__main__":
+    root=ctk.CTk()
+    gui=GUI_Main.GUI(root=root, bindings=bindings)
+    root.mainloop()
